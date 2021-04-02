@@ -18,7 +18,7 @@
         
         <meta name="viewport" content="width=device-width">
 
-    	<title>Controle de Estoque Purchase Store</title>
+    	<title>Controle de Estoque</title>
     </head>
     <body>
         <nav class="navbar navbar-default">
@@ -30,7 +30,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ route('Pagina inicial') }}">Purchase Store</a>
+                <a class="navbar-brand" href="{{ route('Pagina inicial') }}">Controle de Estoque</a>
               </div>
               <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -109,12 +109,6 @@
   
         @yield('conteudo')
 
-<footer class="bs-footer" role="contentinfo">
-  <div class="container">
-    <p>Purchase Store 2016-2019</p>
-  </div>
-
-</footer>
         <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
         <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/plug-ins/1.10.16/sorting/date-uk.js"></script>

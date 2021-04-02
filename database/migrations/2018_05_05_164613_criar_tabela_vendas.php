@@ -20,7 +20,7 @@ class CriarTabelaVendas extends Migration
             $table->double('porcentagem', 8, 2); 
             $table->boolean('online'); 
             $table->boolean('divulgacao'); 
-            $table->integer('fk_cliente')->unsigned();
+            $table->integer('fk_cliente')->unsigned()->nullable();
             $table->foreign('fk_cliente')->references('id_clientes')->on('clientes');
             $table->timestamps();
         });

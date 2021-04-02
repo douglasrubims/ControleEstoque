@@ -17,22 +17,11 @@ class EntradaController extends Controller
         $produtos = Produto
         ::join('entradas', 'produtos.id_produto', '=', 'entradas.fk_produto')
         ->select('entradas.id_entrada','produtos.path_image as imagens','produtos.codigo_produto','produtos.descricao', 'produtos.valor', 'entradas.created_at','entradas.quantidade')
+        ->orderBy('created_at', 'DESC')
         ->getQuery() // Optional: downgrade to non-eloquent builder so we don't build invalid User objects.
         ->get();
 
     	return view('entrada.listagem')->with(['produtos' => $produtos]);
-    }
-
-    public function listarSaida(){
-
-        // $produtos = Produto::all();
-        $produtos = Produto
-        ::join('entradas', 'produtos.id_produto', '=', 'entradas.fk_produto')
-        ->select('produtos.codigo_produto','produtos.descricao', 'produtos.valor', 'entradas.created_at','entradas.quantidade')
-        ->getQuery() // Optional: downgrade to non-eloquent builder so we don't build invalid User objects.
-        ->get();
-
-    	return view('saida.listagem')->with(['produtos' => $produtos]);
     }
 
     public function novo(){

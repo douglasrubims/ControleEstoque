@@ -79,7 +79,7 @@
     <div class="form-group">
         <label class="col-md-4 control-label" for="categoria">Inserir Foto</label>
         <div class="col-md-4">
-            <input type='file' id="primaryImage" name="primaryImage" value="{{ old('primaryImage') }}" accept="image/*" />
+            <input type="file" id="primaryImage" name="primaryImage" value="{{ old('primaryImage') }}" accept="image/*" />
         </div>
     </div>
 

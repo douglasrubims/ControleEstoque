@@ -19,7 +19,7 @@ class VendaController extends Controller
                                               v.porcentagem,v.online,v.created_at,c.nome, v.troca,
                                               v.tipo_pagamento
                                        FROM vendas v
-                                       LEFT JOIN clientes c ON c.id_clientes = v.fk_cliente") );
+                                       LEFT JOIN clientes c ON c.id_clientes = v.fk_cliente ORDER BY v.created_at DESC") );
 
     	return view('venda.listagem')->with(['vendas' => $vendas]);
     }
@@ -38,7 +38,7 @@ class VendaController extends Controller
         $request["created_at"] = date("Y-m-d H:i:s",strtotime($request["created_at"]));
 
         $venda = Venda::create(['valor_venda' => $request["valor_venda"],'desconto' => $request["desconto"],'porcentagem' => $request["porcentagem"],'online' => $request["online"],'divulgacao' => $request["divulgacao"],
-            'fk_cliente' => $request["fk_cliente"], 'created_at' => $request["created_at"], 'tipo_pagamento' => $request["tipo_pagamento"]] );
+            'fk_cliente' => isset($request["fk_cliente"]) ? $request["fk_cliente"] : null, 'created_at' => $request["created_at"], 'tipo_pagamento' => $request["tipo_pagamento"]] );
 
         $insertedId = $venda->id_venda;
 
